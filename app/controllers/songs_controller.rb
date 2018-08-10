@@ -25,8 +25,10 @@ end
 post '/songs' do
   @new_song = Song.new
   @new_song.name = params[:song][:name]
+  # binding.pry
+  artist = Artist.find_or_create_by(name: params[:song][:artist][:name])
+  @new_song.artist = artist
   @new_song.save
-  # Artist.find_or_create_by(params[:artist][:name])
 
   params[:genres].each do |x|
     SongGenre.create(genre_id: x, song_id: @new_song.id)
