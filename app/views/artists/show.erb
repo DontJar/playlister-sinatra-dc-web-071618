@@ -1,0 +1,16 @@
+<h1>Ta-da</h1>
+
+<h2>You found <%=@artist.name%> !</h2>
+
+  They sing:  <ul><%@artist.genres.map do |s|%>
+  <li><a href="/genres/<%=s.slug%>"><%=s.name%></a></li>
+  <%end%>
+  </ul>
+
+  They sing: <ul><%@artist.songs.map do |s|%>
+  <li><a href="/songs/<%=s.slug%>"><%=s.name%></a></li>
+  <%end%>
+  </ul>
+
+
+  </h2>
