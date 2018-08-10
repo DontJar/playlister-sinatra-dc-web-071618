@@ -4,7 +4,7 @@ module Slugify
 
   module InstanceMethods
     def slug
-      binding.pry
+    # binding.pry
       self.name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
     end
   end
@@ -12,6 +12,7 @@ module Slugify
   module ClassMethods
     def find_by_slug(slug)
       # self.all.find do |x|
+      # binding.pry
       self.all.select do |x|
         # binding.pry
         x.slug == slug
